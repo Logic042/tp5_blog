@@ -2,11 +2,15 @@
 namespace app\admin\controller;
 use think\Controller;
 use think\Db;
+use app\admin\model\Admin as AdminModel;
 
 class Admin extends Controller
 {
     public function lst()
     {
+        $model = new AdminModel();
+        $list = $model->all();
+        $this->assign('list',$list);
         return $this->fetch();
     }
     public function add()
@@ -17,6 +21,13 @@ class Admin extends Controller
                 'username' => input('username'),
                 'password' => md5(input('password')),
             ];
+            $validate = \think\Loader::validate('Admin');
+            if(!$validate->check($data))
+            {
+                $this->error($validate->getError());
+                die;
+            }
+            
             if(db('admin')->insert($data))
             {
                 return $this->success('添加管理员成功');
