@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\add.html";i:1566124373;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1565946775;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1566124394;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\add.html";i:1566876373;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1565946775;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1566833140;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +97,7 @@
 							<i class="menu-expand"></i>
 					</a>
 						<ul class="submenu">
-							<li><a href="/admin/document/index.html"> <span
+							<li><a href="<?php echo url('Admin/lst'); ?>"> <span
 									class="menu-text"> 管理列表 </span> <i class="menu-expand"></i>
 							</a></li>
 						</ul></li>
@@ -161,7 +161,7 @@
 													class="col-sm-2 control-label no-padding-right">用户名</label>
 												<div class="col-sm-6">
 													<input class="form-control" id="username" placeholder=""
-														name="username" required="" type="text">
+														name="username" type="text">
 												</div>
 												<p class="help-block col-sm-4 red">* 必填</p>
 											</div>

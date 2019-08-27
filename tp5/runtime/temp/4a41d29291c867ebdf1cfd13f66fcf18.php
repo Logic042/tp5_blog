@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\lst.html";i:1566184342;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1565946775;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1566124394;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\lst.html";i:1566833430;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1565946775;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1566833140;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -97,7 +97,7 @@
 							<i class="menu-expand"></i>
 					</a>
 						<ul class="submenu">
-							<li><a href="/admin/document/index.html"> <span
+							<li><a href="<?php echo url('Admin/lst'); ?>"> <span
 									class="menu-text"> 管理列表 </span> <i class="menu-expand"></i>
 							</a></li>
 						</ul></li>
@@ -169,11 +169,11 @@
 													<td align="center"><?php echo $vo['id']; ?></td>
 													<td align="center"><?php echo $vo['username']; ?></td>
 													<td align="center"><a
-														href="/admin/user/edit/id/6.html"
+														href="<?php echo url('admin/edit',array('id'=>$vo['id'])); ?>"
 														class="btn btn-primary btn-sm shiny"> <i
 															class="fa fa-edit"></i> 编辑
 													</a> <a href="#"
-														onClick="warning('确实要删除吗', '/admin/user/del/id/6.html')"
+														onClick="warning('确实要删除吗', '<?php echo url('admin/delete',array('id'=>$vo['id'])); ?>')"
 														class="btn btn-danger btn-sm shiny"> <i
 															class="fa fa-trash-o"></i> 删除
 													</a></td>

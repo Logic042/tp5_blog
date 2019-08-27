@@ -19,7 +19,9 @@ class Admin extends Validate
     //验证器属性
     
     protected $scene = [
-        'edit' => ['name' => 'require|max','age'],
+        'edit1' => ['name' => 'require|max','age'],
+        'edit' =>['username','password'],
+        'add' => ['username','password'],
     ];
     //定义使用场景，仅在['name' => 'require|max','age']情况下使用验证
     
