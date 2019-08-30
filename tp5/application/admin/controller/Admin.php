@@ -10,7 +10,8 @@ class Admin extends Controller
     {
         $model = new AdminModel();
         $list = $model->all();
-        $this->assign('list',$list);
+        //调用model，
+        $this->assign('list',$list);    //将$list数组传给模板
         return $this->fetch();
     }
     public function add()
@@ -45,13 +46,13 @@ class Admin extends Controller
         $id = input('id');
         if ($id != 1) 
         {
-            if (Db::Table('tp_admin')->delete($id))
+            if (Db::Table('tp_admin')->delete($id)) //使用类库函数进行删除用户信息
                 $this->success('成功删除', 'admin/lst');
             else
                 $this->error('删除失败', 'admin/lst');
         }
         else 
-            $this->error('超管不能删除','admin/lst');
+            $this->error('超管不能删除!!!','admin/lst');
     }
     public function edit()
     {
@@ -79,14 +80,13 @@ class Admin extends Controller
             }
             //使用验证器进行验证$data数据是否符合验证期规则，场景限制为edit
             
-            $save = db('admin')->update($data);
+            $save = db('admin')->update($data); //使用助手函数进行更新
             if($save != false)
                 $this->success('成功修改','Admin/lst');
             else 
                 $this->error('修改失败');
             return ;
         }
-        
         return $this->fetch();
     }
 }

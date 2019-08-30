@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\add.html";i:1566876373;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1565946775;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1566833140;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\wamp\www\tp5\public/../application/admin\view\cate\add.html";i:1567179921;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加管理员</title>
+<title>添加链接</title>
 
 <meta name="description" content="Dashboard">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
 			<div class="navbar-container">
 				<!-- Navbar Barnd -->
 				<div class="navbar-header pull-left">
-					<a href="#" class="navbar-brand"> <small> <img
+					<a href="http://localhost/tp5/public/admin" class="navbar-brand"> <small> <img
 							src="http://localhost/tp5/public/static/admin/images/logo.png" alt="">
 					</small>
 					</a>
@@ -81,64 +81,84 @@
 		<div class="page-container">
 			<!-- Page Sidebar -->
 			<div class="page-sidebar" id="sidebar">
-				<!-- Page Sidebar Header-->
-				<div class="sidebar-header-wrapper">
-					<input class="searchinput" type="text"> <i
-						class="searchicon fa fa-search"></i>
-					<div class="searchhelper">Search Reports, Charts, Emails or
-						Notifications</div>
-				</div>
-				<!-- /Page Sidebar Header -->
-				<!-- Sidebar Menu -->
-				<ul class="nav sidebar-menu">
-					<!--Dashboard-->
-					<li><a href="#" class="menu-dropdown"> <i
-							class="menu-icon fa fa-user"></i> <span class="menu-text">管理员</span>
-							<i class="menu-expand"></i>
-					</a>
-						<ul class="submenu">
-							<li><a href="<?php echo url('Admin/lst'); ?>"> <span
-									class="menu-text"> 管理列表 </span> <i class="menu-expand"></i>
-							</a></li>
-						</ul></li>
+	<!-- Page Sidebar Header-->
+	<div class="sidebar-header-wrapper">
+		<input class="searchinput" type="text"> <i
+			class="searchicon fa fa-search"></i>
+		<div class="searchhelper">Search Reports, Charts, Emails or
+			Notifications</div>
+	</div>
+	<!-- /Page Sidebar Header -->
+	<!-- Sidebar Menu -->
+	<ul class="nav sidebar-menu">
+		<!--Dashboard-->
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-user"></i> <span class="menu-text">管理员</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="<?php echo url('Admin/lst'); ?>"> <span class="menu-text">
+							管理列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
 
-					<li><a href="#" class="menu-dropdown"> <i
-							class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
-							<i class="menu-expand"></i>
-					</a>
-						<ul class="submenu">
-							<li><a href="/admin/document/index.html"> <span
-									class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
-							</a></li>
-						</ul></li>
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="/admin/document/index.html"> <span
+						class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
 
-					<li><a href="#" class="menu-dropdown"> <i
-							class="menu-icon fa fa-gear"></i> <span class="menu-text">系统</span>
-							<i class="menu-expand"></i>
-					</a>
-						<ul class="submenu">
-							<li><a href="/admin/document/index.html"> <span
-									class="menu-text"> 配置 </span> <i class="menu-expand"></i>
-							</a></li>
-						</ul></li>
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-link"></i> <span class="menu-text">热门链接</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="<?php echo url('Links/lst'); ?>"> <span class="menu-text">
+							链接列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
+			
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text">栏目管理</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="<?php echo url('Cate/lst'); ?>"> <span class="menu-text">
+							栏目列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
 
-					<li><a href="http://www.chuanke.com/s2260700.html"
-						class="menu-dropdown"> <i class="menu-icon fa fa-gear"></i> <span
-							class="menu-text">视频教程</span> <i class="menu-expand"></i>
-					</a></li>
-
-				</ul>
-				<!-- /Sidebar Menu -->
-			</div>
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-gear"></i> <span class="menu-text">系统</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="/admin/document/index.html"> <span
+						class="menu-text"> 配置 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
+<!-- 
+		<li><a href="http://www.chuanke.com/s2260700.html"
+			class="menu-dropdown"> <i class="menu-icon fa fa-gear"></i> <span
+				class="menu-text">视频教程</span> <i class="menu-expand"></i>
+		</a></li>
+ -->
+	</ul>
+	<!-- /Sidebar Menu -->
+</div>
 			<!-- /Page Sidebar -->
 			<!-- Page Content -->
 			<div class="page-content">
 				<!-- Page Breadcrumb -->
 				<div class="page-breadcrumbs">
 					<ul class="breadcrumb">
-						<li><a href="#">系统</a></li>
-						<li><a href="#">用户管理</a></li>
-						<li class="active">添加用户</li>
+						<li><a href="http://localhost/tp5/public/admin/">系统</a></li>
+						<li><a href="<?php echo url('Cate/lst'); ?>">栏目管理</a></li>
+						<li class="active">添加栏目</li>
 					</ul>
 				</div>
 				<!-- /Page Breadcrumb -->
@@ -150,7 +170,7 @@
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<div class="widget">
 								<div class="widget-header bordered-bottom bordered-blue">
-									<span class="widget-caption">新增用户</span>
+									<span class="widget-caption">新增栏目</span>
 								</div>
 								<div class="widget-body">
 									<div id="horizontal-form">
@@ -158,23 +178,15 @@
 											method="post">
 											<div class="form-group">
 												<label for="username"
-													class="col-sm-2 control-label no-padding-right">用户名</label>
+													class="col-sm-2 control-label no-padding-right">栏目名称</label>
 												<div class="col-sm-6">
 													<input class="form-control" id="username" placeholder=""
-														name="username" type="text">
+														name="catename" type="text">
 												</div>
 												<p class="help-block col-sm-4 red">* 必填</p>
 											</div>
 
-											<div class="form-group">
-												<label for="group_id"
-													class="col-sm-2 control-label no-padding-right">密&nbsp&nbsp&nbsp&nbsp码</label>
-													<div class="col-sm-6">
-														<input class="form-control" id="password" placeholder=""
-														name="password" required="" type="text">
-													</div>
-												<p class="help-block col-sm-4 red">* 必填</p>
-											</div>
+											
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-10">
 													<button type="submit" class="btn btn-default">保存信息</button>

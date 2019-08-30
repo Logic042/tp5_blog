@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\wamp\www\tp5\public/../application/admin\view\admin\edit.html";i:1566835846;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\links\lst.html";i:1567176734;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加管理员</title>
+<title>链接列表</title>
 
 <meta name="description" content="Dashboard">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -156,9 +156,8 @@
 				<!-- Page Breadcrumb -->
 				<div class="page-breadcrumbs">
 					<ul class="breadcrumb">
-						<li><a href="#">系统</a></li>
-						<li><a href="#">用户管理</a></li>
-						<li class="active">修改用户信息</li>
+						<li><a href="http://localhost/tp5/public/admin/">系统</a></li>
+						<li class="active">链接管理</li>
 					</ul>
 				</div>
 				<!-- /Page Breadcrumb -->
@@ -166,46 +165,44 @@
 				<!-- Page Body -->
 				<div class="page-body">
 
+					<button type="button" tooltip="添加链接"
+						class="btn btn-sm btn-azure btn-addon"
+						onClick="javascript:window.location.href = '<?php echo url('links/add'); ?>'">
+						<i class="fa fa-plus"></i> Add
+					</button>
 					<div class="row">
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<div class="widget">
-								<div class="widget-header bordered-bottom bordered-blue">
-									<span class="widget-caption">修改用户信息</span>
-								</div>
 								<div class="widget-body">
-									<div id="horizontal-form">
-										<form class="form-horizontal" role="form" action=""
-											method="post">
-											
-											<input type="hidden" id="id" value="<?php echo $admins['id']; ?>">
-											
-											<div class="form-group">
-												<label for="username"
-													class="col-sm-2 control-label no-padding-right">用户名</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="username" placeholder=""
-														name="username"  type="text" value="<?php echo $admins['username']; ?>">
-												</div>
-												<p class="help-block col-sm-4 red">* 必填</p>
-											</div>
-											
-
-											<div class="form-group">
-												<label for="group_id"
-													class="col-sm-2 control-label no-padding-right">密&nbsp&nbsp&nbsp&nbsp码</label>
-													<div class="col-sm-6">
-														<input class="form-control" id="password" placeholder=""
-														name="password"  type="text">
-													</div>
-												<p class="help-block col-sm-4 red">* 空置则不修改密码</p>
-											</div>
-											<div class="form-group">
-												<div class="col-sm-offset-2 col-sm-10">
-													<button type="submit" class="btn btn-default">保存信息</button>
-												</div>
-											</div>
-										</form>
+									<div class="flip-scroll">
+										<table class="table table-bordered table-hover">
+											<thead class="">
+												<tr>
+													<th class="text-center">ID</th>
+													<th class="text-center">链接标签</th>
+													<th class="text-center">操作</th>
+												</tr>
+											</thead>
+											<tbody>
+											<?php foreach($list as $vo): ?>
+												<tr>
+													<td align="center"><?php echo $vo['id']; ?></td>
+													<td align="center"><?php echo $vo['title']; ?></td>
+													<td align="center"><a
+														href="<?php echo url('links/edit',array('id'=>$vo['id'])); ?>"
+														class="btn btn-primary btn-sm shiny"> <i
+															class="fa fa-edit"></i> 编辑
+													</a> <a href="#"
+														onClick="warning('确实要删除吗', '<?php echo url('links/delete',array('id'=>$vo['id'])); ?>')"
+														class="btn btn-danger btn-sm shiny"> <i
+															class="fa fa-trash-o"></i> 删除
+													</a></td>
+												</tr>
+											<?php endforeach; ?>	
+											</tbody>
+										</table>
 									</div>
+									<div></div>
 								</div>
 							</div>
 						</div>

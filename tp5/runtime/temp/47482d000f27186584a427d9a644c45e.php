@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\wamp\www\tp5\public/../application/admin\view\admin\edit.html";i:1566835846;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\cate\edit.html";i:1567182011;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -156,9 +156,9 @@
 				<!-- Page Breadcrumb -->
 				<div class="page-breadcrumbs">
 					<ul class="breadcrumb">
-						<li><a href="#">系统</a></li>
-						<li><a href="#">用户管理</a></li>
-						<li class="active">修改用户信息</li>
+						<li><a href="http://localhost/tp5/public/admin/">系统</a></li>
+						<li><a href="<?php echo url('Cate/lst'); ?>">栏目管理</a></li>
+						<li class="active">修改栏目信息</li>
 					</ul>
 				</div>
 				<!-- /Page Breadcrumb -->
@@ -170,35 +170,25 @@
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<div class="widget">
 								<div class="widget-header bordered-bottom bordered-blue">
-									<span class="widget-caption">修改用户信息</span>
+									<span class="widget-caption">修改栏目信息</span>
 								</div>
 								<div class="widget-body">
 									<div id="horizontal-form">
 										<form class="form-horizontal" role="form" action=""
 											method="post">
 											
-											<input type="hidden" id="id" value="<?php echo $admins['id']; ?>">
+											<input type="hidden" id="id" value="<?php echo $cate['id']; ?>">
 											
 											<div class="form-group">
 												<label for="username"
-													class="col-sm-2 control-label no-padding-right">用户名</label>
+													class="col-sm-2 control-label no-padding-right">栏目名称</label>
 												<div class="col-sm-6">
 													<input class="form-control" id="username" placeholder=""
-														name="username"  type="text" value="<?php echo $admins['username']; ?>">
+														name="catename" type="text" value="<?php echo $cate['catename']; ?>">
 												</div>
 												<p class="help-block col-sm-4 red">* 必填</p>
 											</div>
-											
 
-											<div class="form-group">
-												<label for="group_id"
-													class="col-sm-2 control-label no-padding-right">密&nbsp&nbsp&nbsp&nbsp码</label>
-													<div class="col-sm-6">
-														<input class="form-control" id="password" placeholder=""
-														name="password"  type="text">
-													</div>
-												<p class="help-block col-sm-4 red">* 空置则不修改密码</p>
-											</div>
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-10">
 													<button type="submit" class="btn btn-default">保存信息</button>

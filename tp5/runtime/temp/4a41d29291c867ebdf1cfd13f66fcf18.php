@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\lst.html";i:1566833430;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1565946775;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1566833140;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:63:"C:\wamp\www\tp5\public/../application/admin\view\admin\lst.html";i:1566833430;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -29,7 +29,7 @@
 			<div class="navbar-container">
 				<!-- Navbar Barnd -->
 				<div class="navbar-header pull-left">
-					<a href="#" class="navbar-brand"> <small> <img
+					<a href="http://localhost/tp5/public/admin" class="navbar-brand"> <small> <img
 							src="http://localhost/tp5/public/static/admin/images/logo.png" alt="">
 					</small>
 					</a>
@@ -81,55 +81,75 @@
 		<div class="page-container">
 			<!-- Page Sidebar -->
 			<div class="page-sidebar" id="sidebar">
-				<!-- Page Sidebar Header-->
-				<div class="sidebar-header-wrapper">
-					<input class="searchinput" type="text"> <i
-						class="searchicon fa fa-search"></i>
-					<div class="searchhelper">Search Reports, Charts, Emails or
-						Notifications</div>
-				</div>
-				<!-- /Page Sidebar Header -->
-				<!-- Sidebar Menu -->
-				<ul class="nav sidebar-menu">
-					<!--Dashboard-->
-					<li><a href="#" class="menu-dropdown"> <i
-							class="menu-icon fa fa-user"></i> <span class="menu-text">管理员</span>
-							<i class="menu-expand"></i>
-					</a>
-						<ul class="submenu">
-							<li><a href="<?php echo url('Admin/lst'); ?>"> <span
-									class="menu-text"> 管理列表 </span> <i class="menu-expand"></i>
-							</a></li>
-						</ul></li>
+	<!-- Page Sidebar Header-->
+	<div class="sidebar-header-wrapper">
+		<input class="searchinput" type="text"> <i
+			class="searchicon fa fa-search"></i>
+		<div class="searchhelper">Search Reports, Charts, Emails or
+			Notifications</div>
+	</div>
+	<!-- /Page Sidebar Header -->
+	<!-- Sidebar Menu -->
+	<ul class="nav sidebar-menu">
+		<!--Dashboard-->
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-user"></i> <span class="menu-text">管理员</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="<?php echo url('Admin/lst'); ?>"> <span class="menu-text">
+							管理列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
 
-					<li><a href="#" class="menu-dropdown"> <i
-							class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
-							<i class="menu-expand"></i>
-					</a>
-						<ul class="submenu">
-							<li><a href="/admin/document/index.html"> <span
-									class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
-							</a></li>
-						</ul></li>
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="/admin/document/index.html"> <span
+						class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
 
-					<li><a href="#" class="menu-dropdown"> <i
-							class="menu-icon fa fa-gear"></i> <span class="menu-text">系统</span>
-							<i class="menu-expand"></i>
-					</a>
-						<ul class="submenu">
-							<li><a href="/admin/document/index.html"> <span
-									class="menu-text"> 配置 </span> <i class="menu-expand"></i>
-							</a></li>
-						</ul></li>
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-link"></i> <span class="menu-text">热门链接</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="<?php echo url('Links/lst'); ?>"> <span class="menu-text">
+							链接列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
+			
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-list"></i> <span class="menu-text">栏目管理</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="<?php echo url('Cate/lst'); ?>"> <span class="menu-text">
+							栏目列表 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
 
-					<li><a href="http://www.chuanke.com/s2260700.html"
-						class="menu-dropdown"> <i class="menu-icon fa fa-gear"></i> <span
-							class="menu-text">视频教程</span> <i class="menu-expand"></i>
-					</a></li>
-
-				</ul>
-				<!-- /Sidebar Menu -->
-			</div>
+		<li><a href="#" class="menu-dropdown"> <i
+				class="menu-icon fa fa-gear"></i> <span class="menu-text">系统</span>
+				<i class="menu-expand"></i>
+		</a>
+			<ul class="submenu">
+				<li><a href="/admin/document/index.html"> <span
+						class="menu-text"> 配置 </span> <i class="menu-expand"></i>
+				</a></li>
+			</ul></li>
+<!-- 
+		<li><a href="http://www.chuanke.com/s2260700.html"
+			class="menu-dropdown"> <i class="menu-icon fa fa-gear"></i> <span
+				class="menu-text">视频教程</span> <i class="menu-expand"></i>
+		</a></li>
+ -->
+	</ul>
+	<!-- /Sidebar Menu -->
+</div>
 			<!-- /Page Sidebar -->
 			<!-- Page Content -->
 			<div class="page-content">
