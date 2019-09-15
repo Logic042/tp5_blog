@@ -4,8 +4,8 @@ use think\Controller;
 use think\Db;
 use app\admin\model\Cate as CateModel;
 /*
- * tableName:tp_links
- * id,title,url,
+ * tableName:tp_cate
+ * id,catename,
  * */
 class Cate extends Controller
 {
@@ -26,7 +26,7 @@ class Cate extends Controller
             ];
             
             $validate = \think\Loader::validate('Cate');
-            if(!$validate->scene('add')->check($data))
+            if($validate->scene('add')->check($data) === false)
             {
                 $this->error($validate->getError());
                 die;
@@ -70,13 +70,15 @@ class Cate extends Controller
                 $this->error('请填写需要修改的内容');
             }
             else {
+
+                //是用验证器进行验证
                 $validate = \think\Loader::validate('Cate');
-                if(!validate()->scene('edit')->check($data))
+                if($validate->scene('edit')->check($data) === false)
                 {
                     $this->error($validate->getError());
                     die;
                 }
-                //是用验证器进行验证
+                
                 
                 $save = db('cate')->update($data); //使用助手函数进行更新
                 if($save != false)

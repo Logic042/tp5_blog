@@ -240,4 +240,22 @@ return [
         'var_page'  => 'page',
         'list_rows' => 15,
     ],
+    
+    //验证码配置
+    'captcha'                => [
+        //字体大小(px)
+        'fontSize'  => 35,
+        //验证码长度
+        'length'    => 4,
+        //验证码字符集合
+        'codeSet'   => '1234567890',
+        //是否使用混淆曲线
+        'useCurve'  => 'false',
+        //图片高度
+        'imageH'    =>'',
+        //图片宽度
+        'imageW'    =>'',
+        //验证后是否重置
+        'reset'     =>'true',
+    ],
 ];

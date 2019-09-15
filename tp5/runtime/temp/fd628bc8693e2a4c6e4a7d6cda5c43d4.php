@@ -1,3 +1,4 @@
+<?php if (!defined('THINK_PATH')) exit(); /*a:1:{s:65:"C:\wamp\www\tp5\public/../application/admin\view\login\login.html";i:1568528187;}*/ ?>
 <!DOCTYPE html>
 <html xmlns="http://www.w3.org/1999/xhtml"><!--Head--><head>
     <meta charset="utf-8">
@@ -7,12 +8,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <!--Basic Styles-->
-    <link href="__PUBLIC__/style/bootstrap.css" rel="stylesheet">
-    <link href="__PUBLIC__/style/font-awesome.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin/style/bootstrap.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin/style/font-awesome.css" rel="stylesheet">
     <!--Beyond styles-->
-    <link id="beyond-link" href="__PUBLIC__/style/beyond.css" rel="stylesheet">
-    <link href="__PUBLIC__/style/demo.css" rel="stylesheet">
-    <link href="__PUBLIC__/style/animate.css" rel="stylesheet">
+    <link id="beyond-link" href="http://localhost/tp5/public/static/admin/style/beyond.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin/style/demo.css" rel="stylesheet">
+    <link href="http://localhost/tp5/public/static/admin/style/animate.css" rel="stylesheet">
 </head>
 <!--Head Ends-->
 <!--Body-->
@@ -31,8 +32,8 @@
                 
                <div class="loginbox-textbox">
                     <input value="" class="form-control" placeholder="验证码" name="code" type="code" style="width:80px;float:left">
-                    <img src="{:captcha_src()}" alt="captcha" title="单击刷新验证码"  style="width:120px;float:left" 
-                    onclick="this.src='{:captcha_src()}?'+Math.random()"/>
+                    <img src="<?php echo captcha_src(); ?>" alt="captcha" title="单击刷新验证码"  style="width:120px;float:left" 
+                    onclick="this.src='<?php echo captcha_src(); ?>?'+Math.random()"/>
                 </div>
                 
                 <div class="loginbox-submit">
@@ -45,11 +46,11 @@
         </form>
     </div>
     <!--Basic Scripts-->
-    <script src="__PUBLIC__/style/jquery.js"></script>
-    <script src="__PUBLIC__/style/bootstrap.js"></script>
-    <script src="__PUBLIC__/style/jquery_002.js"></script>
+    <script src="http://localhost/tp5/public/static/admin/style/jquery.js"></script>
+    <script src="http://localhost/tp5/public/static/admin/style/bootstrap.js"></script>
+    <script src="http://localhost/tp5/public/static/admin/style/jquery_002.js"></script>
     <!--Beyond Scripts-->
-    <script src="__PUBLIC__/style/beyond.js"></script>
+    <script src="http://localhost/tp5/public/static/admin/style/beyond.js"></script>
 
 
 

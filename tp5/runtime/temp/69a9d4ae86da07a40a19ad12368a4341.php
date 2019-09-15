@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\wamp\www\tp5\public/../application/admin\view\cate\add.html";i:1567179921;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\wamp\www\tp5\public/../application/admin\view\article\lst.html";i:1567521809;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567309594;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加链接</title>
+<title>文章列表</title>
 
 <meta name="description" content="Dashboard">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -103,11 +103,11 @@
 			</ul></li>
 
 		<li><a href="#" class="menu-dropdown"> <i
-				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
+				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文章管理</span>
 				<i class="menu-expand"></i>
 		</a>
 			<ul class="submenu">
-				<li><a href="/admin/document/index.html"> <span
+				<li><a href="<?php echo url('Article/lst'); ?>"> <span
 						class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
 				</a></li>
 			</ul></li>
@@ -157,8 +157,7 @@
 				<div class="page-breadcrumbs">
 					<ul class="breadcrumb">
 						<li><a href="http://localhost/tp5/public/admin/">系统</a></li>
-						<li><a href="<?php echo url('Cate/lst'); ?>">栏目管理</a></li>
-						<li class="active">添加栏目</li>
+						<li class="active">文章管理</li>
 					</ul>
 				</div>
 				<!-- /Page Breadcrumb -->
@@ -166,34 +165,72 @@
 				<!-- Page Body -->
 				<div class="page-body">
 
+					<button type="button" tooltip="添加文章"
+						class="btn btn-sm btn-azure btn-addon"
+						onClick="javascript:window.location.href = '<?php echo url('Article/add'); ?>'">
+						<i class="fa fa-plus"></i> Add
+					</button>
 					<div class="row">
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<div class="widget">
-								<div class="widget-header bordered-bottom bordered-blue">
-									<span class="widget-caption">新增栏目</span>
-								</div>
 								<div class="widget-body">
-									<div id="horizontal-form">
-										<form class="form-horizontal" role="form" action=""
-											method="post">
-											<div class="form-group">
-												<label for="username"
-													class="col-sm-2 control-label no-padding-right">栏目名称</label>
-												<div class="col-sm-6">
-													<input class="form-control" id="username" placeholder=""
-														name="catename" type="text">
-												</div>
-												<p class="help-block col-sm-4 red">* 必填</p>
-											</div>
-
-											
-											<div class="form-group">
-												<div class="col-sm-offset-2 col-sm-10">
-													<button type="submit" class="btn btn-default">保存信息</button>
-												</div>
-											</div>
-										</form>
+									<div class="flip-scroll">
+										<table class="table table-bordered table-hover">
+											<thead class="">
+												<tr>
+													<th class="text-center">ID</th>
+													<th class="text-center">文章名称</th>
+													<th class="text-center">文章作者</th>
+													<th class="text-center">上传时间</th>
+													<th class="text-center">点击量</th>
+													<th class="text-center">文章状态</th>
+													<th class="text-center">缩略图</th>
+													<th class="text-center">所属栏目</th>
+													<th class="text-center">操作</th>
+												</tr>
+											</thead>
+											<tbody>
+											<?php foreach($list as $vo): ?>
+												<tr>
+													<td align="center"><?php echo $vo['id']; ?></td>
+													<td align="center"><?php echo $vo['title']; ?></td>
+													<td align="center"><?php echo $vo['author']; ?></td>
+													<td align="center"><?php echo $vo['time']; ?></td>
+													<td align="center"><?php echo $vo['click']; ?></td>
+													
+													
+													<td align="center">
+													<?php if($vo['state'] == '1'): ?>已推荐<?php endif; if($vo['state'] == '0'): ?>未推荐<?php endif; ?>
+													</td>
+													
+													<td align="center">
+													<?php if($vo['pic'] != ''): ?>
+														<img src="http://localhost/tp5/public/static/<?php echo $vo['pic']; ?>" width=50>
+													<?php else: ?>
+														暂无缩略图
+													<?php endif; ?>
+													</td>
+													
+													<td align="center">
+													<?php echo $vo['cate']['catename']; ?>
+													</td>
+													
+													
+													<td align="center"><a
+														href="<?php echo url('Article/edit',array('id'=>$vo['id'])); ?>"
+														class="btn btn-primary btn-sm shiny"> <i
+															class="fa fa-edit"></i> 编辑
+													</a> <a href="#"
+														onClick="warning('确实要删除吗', '<?php echo url('Article/delete',array('id'=>$vo['id'])); ?>')"
+														class="btn btn-danger btn-sm shiny"> <i
+															class="fa fa-trash-o"></i> 删除
+													</a></td>
+												</tr>
+											<?php endforeach; ?>	
+											</tbody>
+										</table>
 									</div>
+									<div></div>
 								</div>
 							</div>
 						</div>

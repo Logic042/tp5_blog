@@ -25,7 +25,7 @@ class Links extends Validate
     //验证期相应提示信息
     
     protected $scene = [
-        'edit' => ['title','urls','descr'],
+        'edit' => ['title' => 'max:30|unique:links','urls' => 'max:60|unique:links','descr' => 'max:255'],
         'add' => ['title','urls','descr'],
     ];
 }

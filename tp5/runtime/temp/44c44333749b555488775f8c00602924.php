@@ -1,9 +1,9 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:64:"C:\wamp\www\tp5\public/../application/admin\view\links\edit.html";i:1567176706;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:65:"C:\wamp\www\tp5\public/../application/admin\view\article\add.html";i:1567520264;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567309594;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="utf-8">
-<title>添加管理员</title>
+<title>添加文章</title>
 
 <meta name="description" content="Dashboard">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -20,6 +20,10 @@
 <link href="http://localhost/tp5/public/static/admin/style/demo.css" rel="stylesheet">
 <link href="http://localhost/tp5/public/static/admin/style/typicons.css" rel="stylesheet">
 <link href="http://localhost/tp5/public/static/admin/style/animate.css" rel="stylesheet">
+
+<script type="text/javascript" src="http://localhost/tp5/public/static/admin/ueditor/ueditor.config.js"></script>
+<script type="text/javascript" src="http://localhost/tp5/public/static/admin/ueditor/ueditor.all.min.js"></script>
+<script type="text/javascript" src="http://localhost/tp5/public/static/admin/ueditor/lang/zh-cn/zh-cn.js"></script>
 
 </head>
 <body>
@@ -103,11 +107,11 @@
 			</ul></li>
 
 		<li><a href="#" class="menu-dropdown"> <i
-				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
+				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文章管理</span>
 				<i class="menu-expand"></i>
 		</a>
 			<ul class="submenu">
-				<li><a href="/admin/document/index.html"> <span
+				<li><a href="<?php echo url('Article/lst'); ?>"> <span
 						class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
 				</a></li>
 			</ul></li>
@@ -157,8 +161,8 @@
 				<div class="page-breadcrumbs">
 					<ul class="breadcrumb">
 						<li><a href="http://localhost/tp5/public/admin/">系统</a></li>
-						<li><a href="<?php echo url('Links/lst'); ?>">链接管理</a></li>
-						<li class="active">修改链接信息</li>
+						<li><a href="<?php echo url('Article/lst'); ?>">文章管理</a></li>
+						<li class="active">添加文章</li>
 					</ul>
 				</div>
 				<!-- /Page Breadcrumb -->
@@ -170,44 +174,97 @@
 						<div class="col-lg-12 col-sm-12 col-xs-12">
 							<div class="widget">
 								<div class="widget-header bordered-bottom bordered-blue">
-									<span class="widget-caption">修改用户信息</span>
+									<span class="widget-caption">新增文章</span>
 								</div>
 								<div class="widget-body">
 									<div id="horizontal-form">
-										<form class="form-horizontal" role="form" action=""
+										<form class="form-horizontal" role="form" action="" enctype="multipart/form-data"
 											method="post">
-											
-											<input type="hidden" id="id" value="<?php echo $links['id']; ?>">
-											
 											<div class="form-group">
 												<label for="username"
-													class="col-sm-2 control-label no-padding-right">链接标签</label>
+													class="col-sm-2 control-label no-padding-right">文章标题</label>
 												<div class="col-sm-6">
 													<input class="form-control" id="username" placeholder=""
-														name="linkstitle" type="text" value="<?php echo $links['title']; ?>">
+														name="articletitle" type="text">
 												</div>
 												<p class="help-block col-sm-4 red">* 必填</p>
 											</div>
-
+											
 											<div class="form-group">
-												<label for="group_id"
-													class="col-sm-2 control-label no-padding-right">链接地址</label>
-													<div class="col-sm-6">
-														<input class="form-control" id="password" placeholder=""
-														name="linksurl" type="text" value="<?php echo $links['urls']; ?>">
-													</div>
+												<label for="username"
+													class="col-sm-2 control-label no-padding-right">文章简介</label>
+												<div class="col-sm-6">
+													<input class="form-control" id="username" placeholder=""
+														name="articledescr" type="text">
+												</div>
 												<p class="help-block col-sm-4 red">* 必填</p>
 											</div>
 											
 											<div class="form-group">
-												<label for="group_id"
-													class="col-sm-2 control-label no-padding-right">链接备注</label>
-													<div class="col-sm-6">
-														<input class="form-control" id="password" placeholder=""
-														name="linksdescr"  type="text" value="<?php echo $links['descr']; ?>">
-													</div>
+												<label for="username"
+													class="col-sm-2 control-label no-padding-right">文章关键词</label>
+												<div class="col-sm-6">
+													<input class="form-control" id="username" placeholder=""
+														name="articlekeyword" type="text">
+												</div>
 												<p class="help-block col-sm-4 red">* 必填</p>
 											</div>
+											
+											<div class="form-group">
+												<label for="username"
+													class="col-sm-2 control-label no-padding-right">文章作者</label>
+												<div class="col-sm-6">
+													<input class="form-control" id="username" placeholder=""
+														name="articleauthor" type="text">
+												</div>
+												<p class="help-block col-sm-4 red">* 必填</p>
+											</div>
+											
+											<div class="form-group">
+												<label for="username"
+													class="col-sm-2 control-label no-padding-right">文章缩略图</label>
+												<div class="col-sm-6">
+													<input id="pic" type="file" name="articlepic">
+												</div>
+												<p class="help-block col-sm-4 red"></p>
+											</div>
+											
+											<div class="form-group">
+												<label for="username"
+													class="col-sm-2 control-label no-padding-right">文章所属栏目</label>
+												<div class="col-sm-6">
+													<select name="articlecateid">
+														<option value="">请选择栏目</option>
+														<?php foreach($cate as $vo): ?>
+														<option value=""><?php echo $vo['catename']; ?></option>
+														<?php endforeach; ?>
+													</select>
+												</div>
+												<p class="help-block col-sm-4 red">* 必选</p>
+											</div>
+											
+											<div class="form-group">
+												<label for="username"
+													class="col-sm-2 control-label no-padding-right">是否推荐</label>
+												<div class="col-sm-6">
+													<input class="checkbox-slider colored-darkorange" name="articlestate" type="checkbox">
+                                    				<span class="text"></span>
+												</div>
+												<p class="help-block col-sm-4 red"></p>
+											</div>
+											
+											<div class="form-group">
+                           					<label for="group_id" class="col-sm-2 control-label no-padding-right">文章内容</label>
+                            					<div class="col-sm-6">
+                                 					<label>
+                                    					<textarea name="articlecontent"  id="content"></textarea>
+                                 					</label>
+                            					</div>
+                        					</div>
+
+
+
+											
 											<div class="form-group">
 												<div class="col-sm-offset-2 col-sm-10">
 													<button type="submit" class="btn btn-default">保存信息</button>
@@ -233,6 +290,16 @@
 	<script src="http://localhost/tp5/public/static/admin/style/jquery.js"></script>
 	<!--Beyond Scripts-->
 	<script src="http://localhost/tp5/public/static/admin/style/beyond.js"></script>
+	
+	<script type="text/javascript">
+
+    //实例化编辑器
+    //建议使用工厂方法getEditor创建和引用编辑器实例，如果在某个闭包下引用该编辑器，直接调用UE.getEditor('editor')就能拿到相关的实例
+    UE.getEditor('content',{initialFrameWidth:800,initialFrameHeight:400,});
+    
+
+
+	</script>
 
 
 

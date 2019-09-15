@@ -1,4 +1,4 @@
-<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\wamp\www\tp5\public/../application/admin\view\cate\lst.html";i:1567181976;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567180219;}*/ ?>
+<?php if (!defined('THINK_PATH')) exit(); /*a:3:{s:62:"C:\wamp\www\tp5\public/../application/admin\view\cate\lst.html";i:1567181976;s:57:"C:\wamp\www\tp5\application\admin\view\common\header.html";i:1567176926;s:55:"C:\wamp\www\tp5\application\admin\view\common\left.html";i:1567309594;}*/ ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -103,11 +103,11 @@
 			</ul></li>
 
 		<li><a href="#" class="menu-dropdown"> <i
-				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文档</span>
+				class="menu-icon fa fa-file-text"></i> <span class="menu-text">文章管理</span>
 				<i class="menu-expand"></i>
 		</a>
 			<ul class="submenu">
-				<li><a href="/admin/document/index.html"> <span
+				<li><a href="<?php echo url('Article/lst'); ?>"> <span
 						class="menu-text"> 文章列表 </span> <i class="menu-expand"></i>
 				</a></li>
 			</ul></li>

@@ -25,17 +25,17 @@
 									</div>
 									<section>
 										<h2>
-											<span class="profile"><span>admin</span></span>
+											<span class="profile"><span>{$Request.session.username}</span></span>
 										</h2>
 									</section>
 							</a> <!--Login Area Dropdown-->
 								<ul
 									class="pull-right dropdown-menu dropdown-arrow dropdown-login-area">
-									<li class="username"><a>David Stevenson</a></li>
+									<li class="username"><a>{$Request.session.username}</a></li>
 									<li class="dropdown-footer"><a
-										href="/admin/user/logout.html"> 退出登录 </a></li>
+										href="{:url('Admin/logout')}"> 退出登录 </a></li>
 									<li class="dropdown-footer"><a
-										href="/admin/user/changePwd.html"> 修改密码 </a></li>
+										href="{:url('admin/edit',array('id' => $Request.session.uid))}"> 修改密码 </a></li>
 								</ul> <!--/Login Area Dropdown--></li>
 							<!-- /Account Area -->
 							<!--Note: notice that setting div must start right after account area list.

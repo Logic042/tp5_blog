@@ -31,7 +31,7 @@ class Links extends Controller
             ];
             
             $validate = \think\Loader::validate('Links');
-            if(!$validate->scene('add')->check($data))
+            if($validate->scene('add')->check($data) === false)
             {
                 $this->error($validate->getError());
                 die;
@@ -71,14 +71,14 @@ class Links extends Controller
                 'urls' =>input('linksurl'),
                 'descr' => input('linksdescr'),
             ];
-            if($data == $links)
+            if($data['title'] == $links['title'] && $data['urls'] == $links['urls'] && $data['descr'] == '')
             {
                 $this->error('请填写需要修改的内容');
             }
             else {
                 
                 $validate = \think\Loader::validate('Links');
-                if(!validate()->scene('edit')->check($data))
+                if($validate->scene('edit')->check($data) === false)
                 {
                     $this->error($validate->getError());
                     die;
